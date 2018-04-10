@@ -1,5 +1,5 @@
 ## Prerequisites for this project:
-- NodeJS (at least v6 with npm 3)
+- NodeJS (preferable v6 major version with npm 3, not node v8 & v8+)
 - VS Code IDE
 
 # Installing and starting the project:
