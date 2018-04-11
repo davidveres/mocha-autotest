@@ -60,6 +60,17 @@ describe('Smoke suite', function () {
         });
     });
 
+
+    describe('Sort the results by date', function(){
+
+        it("Sort by 'Date' is clicked", function(){
+
+        });
+    });
+
+
+
+
     describe('Epam logo is clicked', function () {
         it("When the EPAM logo is clicked", function(){
             driver.findElement(by.css('.header__logo')).click();
@@ -75,6 +86,37 @@ describe('Smoke suite', function () {
         });
        
     });
+
+
+    describe('Careers button is clicked', function () {
+
+        it("When the Carreers buttin os clicked", function () {
+
+        });
+
+        it("Then the  Careers page should appear", function () {
+
+        });
+
+    });
+
+
+    describe('Searching based on location', function () {
+
+        it("When Hungary as a location is selected", function () {
+
+        });
+
+        it("And Debecen is selected", function () {
+
+        });
+
+        it("And the Find button is clicked", function(){
+
+        });
+
+    });
+
 
     after('Closing browser instance', function () {
         return driver.quit();
