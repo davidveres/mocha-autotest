@@ -113,19 +113,35 @@ describe('Smoke suite', function () {
 
     describe('Searching based on location', function () {
 
-        it("When Hungary as a location is selected", function () {
-            driver.findElement(by.css("li[aria - label = 'Hungary']")).click();
-            driver.sleep(5000);
+        it("When it clicks on the Location choicebox", function(){
+            driver.findElement(by.css(".section--hide-on-mobile .select-box-selection")).click();
+            driver.sleep(3000);
+                return driver.wait(function(){
+                    return driver.findElement(by.css(".select-box-dropdown")).isDisplayed().then(function(valami){
+                        return valami;
+                    })
+                });
+            
         });
 
-        it("And Debecen is selected", function () {
-            driver.findElement(by.css());
-            driver.sleep(5000);
+        it("When Hungary as a location is selected", function () {
+            driver.findElement(by.css("li[aria-label = 'Hungary']")).click();
+            driver.sleep(3000);
+            return driver.wait(function (){
+                return driver.findElement(by.css(".dropdown-cities")).isDisplayed().then(function (valami) {
+                    return valami;
+                })
+            }) 
+        });
+
+        it("And Debrecen is selected", function () {
+            driver.findElement(by.css("li[aria-label='Hungary'] > ul > li:nth-child(3)")).click();
+            driver.sleep(9000);
         });
 
         it("And the Find button is clicked2", function(){
-            findButton.click();
-            driver.sleep(4000);
+            driver.findElement(by.css(".section--hide-on-mobile .job-search__submit")).click();
+            driver.sleep(12000);
             return driver.wait(function () {
                 return driver.findElement(by.css(".search-result__heading")).isDisplayed().then(function (valtozo) {
                     return valtozo;
