@@ -141,7 +141,7 @@ describe('Smoke suite', function () {
 
         it("And the Find button is clicked2", function(){
             driver.findElement(by.css(".section--hide-on-mobile .job-search__submit")).click();
-            driver.sleep(12000);
+            driver.sleep(6000);
             return driver.wait(function () {
                 return driver.findElement(by.css(".search-result__heading")).isDisplayed().then(function (valtozo) {
                     return valtozo;
