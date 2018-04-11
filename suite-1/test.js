@@ -49,7 +49,7 @@ describe('Smoke suite', function () {
 
         it('And the "Find" button is clicked', function () {
             findButton.click();
-            driver.sleep(6000);
+            driver.sleep(4000);
             return driver.wait(function () {
                 return driver.findElement(by.css(searchResultHeadingLocator)).isDisplayed();
             });
@@ -61,10 +61,15 @@ describe('Smoke suite', function () {
     });
 
 
+
+
     describe('Sort the results by date', function(){
 
         it("Sort by 'Date' is clicked", function(){
-
+            driver.findElement(by.css("li[data-value = 'time']")).click();
+            return driver.wait(function () {
+                return driver.findElement(by.css(".search-result__heading")).isDisplayed();
+            });
         });
     });
 
@@ -90,12 +95,17 @@ describe('Smoke suite', function () {
 
     describe('Careers button is clicked', function () {
 
-        it("When the Carreers buttin os clicked", function () {
-
+        it("When the Carreers button is clicked", function () {
+            driver.findElement(by.css("a[href^='/careers']")).click();
+            return driver.wait(function () {
+                return driver.findElement(by.css("h1.title-ui")).isDisplayed().then(function (valtozo) {
+                    return valtozo;
+                })
+            });
         });
 
         it("Then the  Careers page should appear", function () {
-
+            return expect(driver.getCurrentUrl()).to.eventually.equal("https://www.epam.com/careers");
         });
 
     });
@@ -104,15 +114,23 @@ describe('Smoke suite', function () {
     describe('Searching based on location', function () {
 
         it("When Hungary as a location is selected", function () {
-
+            driver.findElement(by.css("li[aria - label = 'Hungary']")).click();
+            driver.sleep(5000);
         });
 
         it("And Debecen is selected", function () {
-
+            driver.findElement(by.css());
+            driver.sleep(5000);
         });
 
-        it("And the Find button is clicked", function(){
-
+        it("And the Find button is clicked2", function(){
+            findButton.click();
+            driver.sleep(4000);
+            return driver.wait(function () {
+                return driver.findElement(by.css(".search-result__heading")).isDisplayed().then(function (valtozo) {
+                    return valtozo;
+                })
+            });
         });
 
     });
