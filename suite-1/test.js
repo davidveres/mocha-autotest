@@ -60,11 +60,20 @@ describe('Smoke suite', function () {
         });
     });
 
-    describe('Homework', function () {
-        xit('Please choose one task/scenario from prevoius class\' in place of this one and implement it!' +
-            '\n\tMake sure to add a short description in comments as well!', function () {
-
+    describe('Epam logo is clicked', function () {
+        it("When the EPAM logo is clicked", function(){
+            driver.findElement(by.css('.header__logo')).click();
+            return driver.wait(function(){
+                return driver.findElement(by.css(".background-video-ui")).isDisplayed().then(function(valtozo){
+                    return valtozo;
+                })
             });
+        });
+
+        it("Then the main page should appear", function(){
+            return expect(driver.getCurrentUrl()).to.eventually.equal("https://www.epam.com/");
+        });
+       
     });
 
     after('Closing browser instance', function () {
